@@ -1,0 +1,40 @@
+<html itemscope itemtype="http://schema.org/Product" prefix="og: http://ogp.me/ns#" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <!--#include virtual="head.html" -->
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--#include virtual="base.html" -->
+
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="stylesheet" href="css/all.css">
+  </head>
+  <body>
+    <!--#include virtual="body.html" -->
+    <div id="react"></div>
+    <script>
+    fetch('http://app.caflou.com/api/meet-url-valid', {
+      method: 'POST',
+      body: JSON.stringify({
+        url: window.location.pathname
+      })
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        if (data.url == 'valid') {
+          // Render the main/root Component.
+          // ReactDOM.render(<App />, document.getElementById('react'));
+        } else {
+          console.log('Sorry, invalid url')
+          // window.location = 'https://app.caflou.com'
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+
+    </script>
+  </body>
+</html>
