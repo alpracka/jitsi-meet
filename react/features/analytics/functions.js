@@ -104,7 +104,7 @@ export function createHandlers({ getState }: { getState: Function }) {
             })
             .catch(e => {
                 analytics.dispose();
-                logger.error(e);
+                // logger.error(e);
 
                 return [];
             }));
