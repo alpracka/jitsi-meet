@@ -1,9 +1,9 @@
 *.swp
 .*.tmp
 deploy-local.sh
-libs/
-all.css
-*css.map
+# libs/
+# all.css
+# *css.map
 .remote-sync.json
 .sync-config.cson
 
@@ -83,4 +83,3 @@ android/app/dropbox.key
 android/app/google-services.json
 ios/app/dropbox.key
 ios/app/GoogleService-Info.plist
-
