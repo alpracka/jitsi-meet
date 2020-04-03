@@ -21,7 +21,7 @@ var interfaceConfig = {
 
     // if watermark is disabled by default, it can be shown only for guests
     SHOW_WATERMARK_FOR_GUESTS: true,
-    SHOW_BRAND_WATERMARK: true,
+    SHOW_BRAND_WATERMARK: false,
     BRAND_WATERMARK_LINK: 'https://caflou.com',
     SHOW_POWERED_BY: false,
     SHOW_DEEP_LINKING_IMAGE: false,
