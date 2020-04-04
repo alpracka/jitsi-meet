@@ -21,33 +21,30 @@ document.addEventListener('DOMContentLoaded', () => {
     APP.connectionTimes['document.ready'] = now;
     logger.log('(TIME) document ready:\t', now);
 
-    // fetch('https://app.caflou.com/api/meet-url-valid', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify({
-    //     url: window.location.pathname
-    //   })
-    // })
-    // .then((response) => {
-    //   return response.json();
-    // })
-    // .then((data) => {
-    //   if (data.url == 'valid') {
-    //     // Render the main/root Component.
-    //     ReactDOM.render(<App />, document.getElementById('react'));
-    //   } else {
-    //     console.log('Sorry, invalid url')
-    //     window.location = 'https://app.caflou.com'
-    //   }
-    // })
-    // .catch((error) => {
-    //   console.error('Error:', error);
-    // });
-
-    // Render the main/root Component.
-    ReactDOM.render(<App />, document.getElementById('react'));
+    fetch('https://app.caflou.com/api/meet-url-valid', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        url: window.location.pathname
+      })
+    })
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      if (data.url == 'valid') {
+        // Render the main/root Component.
+        ReactDOM.render(<App />, document.getElementById('react'));
+      } else {
+        console.log('Sorry, invalid url')
+        window.location = 'https://app.caflou.com'
+      }
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
 });
 
 // Workaround for the issue when returning to a page with the back button and
